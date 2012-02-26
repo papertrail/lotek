@@ -1,0 +1,118 @@
+
+
+<div class="page-header">
+  <h1>Metric Builder</h1>
+</div>
+
+<div class="row">
+  <div class="span8">
+
+    <form class="form-horizontal" id="regex_form">
+      <fieldset>
+        <!-- <legend>Metric Builder</legend> -->
+
+        <div class="control-group">
+          <label class="control-label" for="regex">Regular Expression</label>
+          <div class="controls">
+            <div class="input-prepend input-append">
+            <span class="add-on add-on-prepend">/</span><input type="text" class="input-xlarge span5" name="regex" id="regex"><span class="add-on">/</span>
+            </div>
+            <p class="help-block">Regular expression to match against the log lines</p>
+          </div>
+        </div>
+
+        <div class="control-group">
+          <label class="control-label" for="metric">Metric Name</label>
+          <div class="controls">
+            <input type="text" class="input-xlarge span4" name="metric">
+            <p class="help-block">
+              Name of metric to submit. Can include variable references (like <code>${1}</code>)
+              from the extracted fields.
+            </p>
+          </div>
+        </div>
+
+        <div class="control-group">
+          <label class="control-label" for="source">Source Name</label>
+          <div class="controls">
+            <input type="text" class="input-xlarge span3" name="source">
+            <p class="help-block">
+              Source of the metric to submit. Can include variable references (like <code>${1}</code>)
+              from the table to the right as well as <code>${hostname}</code> to use the hostname
+              of the log line.
+            </p>
+          </div>
+        </div>
+
+
+        <div class="control-group">
+          <label class="control-label" for="source">Aggregation Method</label>
+          <div class="controls">
+            <label class="radio">
+              <input type="radio" name="aggregation" value="count" checked="true">
+              Count the number of log lines matched
+            </label>
+
+            <label class="radio">
+              <input type="radio" name="aggregation" value="sum">
+              Add together (sum) all of the values matched
+            </label>
+
+            <label class="radio">
+              <input type="radio" name="aggregation" value="average">
+              Average all of the values matched (mean)
+            </label>
+          </div>
+        </div>
+
+        <div class="control-group" id="aggregation_field_group">
+          <label class="control-label" for="source">Aggregation Field</label>
+
+          <div class="controls">
+            <input type="text" class="input-xlarge span2" name="aggregation_field">
+            <p class="help-block">
+              Should reference a variable (like <code>${1}</code>).
+            </p>
+          </div>
+        </div>
+
+
+      </fieldset>
+    </form>
+  </div>
+
+  <div class="span4">
+    <div class="well" id="debug_info">
+      <h3>Debugging</h3>
+      <p>
+        If <em>Log lines</em> have been specified below, debug data will be available here.
+      </p>
+    </div>
+
+
+    <div id="preview">
+    <%#= erb :preview %>
+    </div>
+
+  </div>
+
+  <div class="span10">
+    <div class="alert alert-info span10">
+      <h4>Your Papertrail Webhook URL:</h4>
+        <input type="text" class="input-xlarge span10" id="webhook_url" name="webhook_url">
+    </div>
+
+  </div>
+</form>
+</div>
+
+
+<div class="row">
+  <div class="span11 well">
+    <h3>Test with real log lines</h3>
+    <div class="control-group">
+      <textarea class="input-medium span11" name="lines" rows="5" id="log_lines"></textarea>
+      <p class="help-block">Paste sample log lines to help perfect the regular expression above.</p>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,45 @@
+GEM
+  remote: http://rubygems.org/
+  specs:
+    activesupport (2.3.14)
+    addressable (2.2.7)
+    daemons (1.1.8)
+    dalli (1.1.5)
+    eventmachine (0.12.10)
+    faraday (0.7.6)
+      addressable (~> 2.2)
+      multipart-post (~> 1.1)
+      rack (~> 1.1)
+    faraday_middleware (0.8.4)
+      faraday (>= 0.7.4, < 0.9)
+    multipart-post (1.1.5)
+    rack (1.4.1)
+    rack-protection (1.2.0)
+      rack
+    rufus-dollar (1.0.4)
+    shotgun (0.9)
+      rack (>= 1.0)
+    sinatra (1.3.2)
+      rack (~> 1.3, >= 1.3.6)
+      rack-protection (~> 1.2)
+      tilt (~> 1.3, >= 1.3.3)
+    thin (1.3.1)
+      daemons (>= 1.0.9)
+      eventmachine (>= 0.12.6)
+      rack (>= 1.0.0)
+    tilt (1.3.3)
+    yajl-ruby (1.1.0)
+
+PLATFORMS
+  ruby
+
+DEPENDENCIES
+  activesupport (~> 2.3)
+  dalli
+  faraday
+  faraday_middleware
+  rufus-dollar
+  shotgun
+  sinatra
+  thin
+  yajl-ruby

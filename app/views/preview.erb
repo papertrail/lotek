@@ -1,0 +1,43 @@
+<h3>Extracted fields</h3>
+
+<table class="table">
+  <% if @variable_list %>
+  <thead>
+    <tr>
+      <% @keys.each do |key| %>
+      <th>${<%= key %>}</th>
+      <% end %>
+    </tr>
+  </thead>
+  <tbody>
+    <% @variable_list.each do |variables| %>
+    <tr>
+      <% @keys.each do |key| %>
+      <td><%= variables[key] %></td>
+      <% end %>
+    </tr>
+    <% end %>
+  </tbody>
+  <% else %>
+  <!-- <thead>
+    <tr>
+      <th>Data</th>
+    </tr>
+  </thead> -->
+  <tbody>
+    <tr>
+      <td><em>No data</em></td>
+    </tr>
+  </tbody>
+  <% end %>
+</table>
+
+<h3>Metric</h3>
+<p>
+  <code><%= @metric %></code>
+</p>
+
+<h3>Source</h3>
+<p>
+  <code><%= @source %></code>
+</p>
