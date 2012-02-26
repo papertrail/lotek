@@ -2,7 +2,7 @@ require 'rufus-dollar'
 
 class LineParser
   def initialize(params)
-    @regex       = Regexp.new(params[:regex])
+    @regex       = Regexp.new(params[:regex]) rescue Regexp.new('')
     @metric      = params[:metric]
     @source      = params[:source]
     @aggregation = params[:aggregation]
