@@ -24,14 +24,16 @@ module Lotek
 
       @variable_list = lines.collect do |line|
         parser.parse_message(line)
+      end.compact
+
+      if @variable_list.first
+        @keys = @variable_list.first.keys.sort
       end
 
-      @keys = @variable_list.first.keys.sort
-
-      result = parser.parse(:hostname => 'host1', :message => lines.first)
-
-      @metric = result[:name]
-      @source = result[:source]
+      if result = parser.parse(:hostname => 'host1', :message => lines.first)
+        @metric = result[:name]
+        @source = result[:source]
+      end
 
       erb :preview, :layout => false
     end
