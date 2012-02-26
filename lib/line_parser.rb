@@ -13,13 +13,18 @@ class LineParser
     if variables = parse_message(event[:message])
       source = @source.present? ? Rufus.dsub(@source, variables) : event[:hostname]
       time   = event[:received_at].present? ? Time.parse(event[:received_at]) : Time.now
+      value  = Rufus.dsub(@field, variables)
+
+      if value =~ /^\d+(\.\d+)?$/
+        value = value.to_f
+      end
 
       {
         :metric      => Rufus.dsub(@metric, variables),
         :time        => time,
         :source      => source,
         :aggregation => @aggregation,
-        :value       => Rufus.dsub(@field, variables)
+        :value       => value
       }
     end
   end
