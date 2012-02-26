@@ -30,7 +30,7 @@ module Lotek
 
       result = parser.parse(:hostname => 'host1', :message => lines.first)
 
-      @metric = result[:metric]
+      @metric = result[:name]
       @source = result[:source]
 
       erb :preview, :layout => false
