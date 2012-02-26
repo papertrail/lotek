@@ -20,7 +20,7 @@ class LineParser
       end
 
       {
-        :metric      => Rufus.dsub(@metric, variables),
+        :name        => Rufus.dsub(@metric, variables),
         :time        => time,
         :source      => source,
         :aggregation => @aggregation,
