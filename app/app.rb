@@ -57,8 +57,6 @@ module Lotek
 
       queue.save
 
-      puts "queue: #{queue.to_hash.inspect}"
-
       settings.metrics_client.submit(queue.to_hash)
 
       'ok'
