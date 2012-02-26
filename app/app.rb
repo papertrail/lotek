@@ -2,6 +2,7 @@ require 'sinatra'
 require 'active_support'
 require 'librato_metrics'
 require 'line_parser'
+require 'metric_queue'
 
 module Lotek
   class App < Sinatra::Base
