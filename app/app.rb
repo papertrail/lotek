@@ -1,5 +1,7 @@
 require 'sinatra'
 require 'active_support'
+require 'dalli'
+
 require 'librato_metrics'
 require 'line_parser'
 require 'metric_queue'
