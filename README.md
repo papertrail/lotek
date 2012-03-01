@@ -2,12 +2,16 @@
 
 A Papertrail webhook to manage metrics from logs.
 
+![Lo-Teks](http://cps-static.rovicorp.com/2/Open/Sony%20Pictures/Johnny%20Mnemonic/_derived_jpg_q90_410x410_m0/JohnnyMnemonic-Still2.jpg)
+
+http://en.wikipedia.org/wiki/Johnny_Mnemonic_(film)
+
 
 ## Create an instance of this webhook on heroku
 
 The easiest way to run this is to grab the code and run a copy on heroku:
 
-    $ git clone git://github.com/eric/lotek.git
+    $ git clone git://github.com/papertrail/lotek.git
     $ cd lotek
     $ heroku create --stack cedar
     $ heroku addons:add memcache
