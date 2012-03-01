@@ -33,6 +33,6 @@ dashboard.
 
 # License
 
-Copyright (c) 2012 Eric Lindvall
+Copyright (c) 2012 Eric Lindvall, Seven Scale LLC
 
 Published under the MIT License, see LICENSE
