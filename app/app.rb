@@ -59,7 +59,7 @@ module Lotek
 
       queue.save
 
-      settings.metrics_client.submit(queue.to_hash)
+      settings.metrics_client.submit(queue.to_hash) unless queue.empty?
 
       'ok'
     end
