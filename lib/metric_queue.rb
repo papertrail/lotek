@@ -15,6 +15,10 @@ class MetricQueue
     end
   end
 
+  def empty?
+    @gauges.empty?
+  end
+
   def to_hash
     gauges = @gauges.collect do |name, gauge|
       gauge.to_hash
